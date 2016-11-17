@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+   <!--Name: 				Yojana Vilas Patil
+      Class Account #:		jadrn047
+      REDID:				819676514
+      Project #3 			signup.html									-->
+   <head>
+      <meta charset="utf-8">
+      <title>SDSU Rock 'n' Roll Marathon 2016</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="http://jadran.sdsu.edu/jquery/jquery.js"></script>  
+      <script src="proj2.js"></script> 
+	  <script type="text/javascript" src="ajax_get_lib.js"></script>
+	  <script type="text/javascript" src="form_upload_ajax.js"></script>  
+   </head>
+   <body>
+      <div class="banner">
+         <div class= "signup">
+            <h1>Registration Form</h1>
+         </div>
+      </div>
+      <div>
+         <form  
+            name="customer"
+			id= "customer_info_form"
+            method="post" 
+            action="process_request.php"
+            enctype="multipart/form-data">
+            <fieldset>
+               <legend>Personal Information</legend>
+               <ul>
+                  <li><label class="grid" >First Name<span>*</span></label>
+                     <input type="text" id="fname" name="fname" size="25" class='required' autofocus="autofocus" />
+                  </li>
+                  <li><label class="grid" >Middle Name</label>
+                     <input type="text" id="mname" name="mname" size="25" class='required' />
+                  </li>
+                  <li><label class="grid" >Last Name<span>*</span></label>
+                     <input type="text" id="lname"  name="lname" size="25" class='required' />
+                  </li>
+                  <li><label class="grid" >Address<span>*</span></label>
+                     <input type="text" id="address" name="address" size="40" class='space'/>
+                  </li>
+                  <li><label class="grid" >Address(optional)</label>
+                     <input type="text"  id="address_1" name="address_1"  size="40" class='required'/>
+                  </li>
+                  <li>
+                     <label class="grid" >City<span>*</span></label>
+                     <input type="text" id="city"  name="city" size="25" class='required'/> 
+                  </li>
+                  <div class="clearfix" ></div>
+                  <li>
+                     <label class="grid" >State<span>*</span></label>
+                     <input type="text" id="state"  name="state" size="2"> 
+                  </li>
+                  <div class="clearfix" ></div>
+                  <li>
+                     <label class="grid" >Zipcode<span>*</span></label>
+                     <input type="text" id="zipcode" name="zipcode" size="5" maxlength="5" class='required'/>
+                  </li>
+                  <div class="clearfix" ></div>
+               </ul>
+            </fieldset>
+            <fieldset>
+               <legend>Contact Information</legend>
+               <ul>
+                  <li><label class="grid" >Primary Phone<span>*</span></label>
+                     <input type="text" id ="area_code" name="area_code" size="3" placeholder="XXX" maxlength="3" class='required'/>
+                     <input type="text" id="prefix"  name="prefix" size="3" placeholder="XXX" maxlength="3" class='required' />-
+                     <input type="text" id="phone" name="phone" size="4" placeholder="XXXX" maxlength="4" class='required'/>
+                  </li>
+                  <li><label class="grid" >Email Address<span>*</span></label>
+                     <input type="text" id="email" name="email" size="25" class='required'/>
+                  </li>
+               </ul>
+            </fieldset>
+            <fieldset>
+               <legend>Other Information</legend>
+               <ul>
+                  <li><label class="grid" >Gender<span>*</span></label>                       
+                     <input type="radio" name ="gender" id="gender1" value="Male" /> Male
+                     <input type="radio" name ="gender" id="gender2" value="Female" />  Female                                 
+                  </li>
+                  <li><label class="grid" >Date of Birth<span>*</span></label>
+                     <input type="text" id="m" size="2" name="month" placeholder="mm" maxlength="2" > /
+                     <input type="text" id="d" size="2" name="day" placeholder="dd" maxlength="2"> /
+                     <input type="text" id="y" size="4" name="year" placeholder="YYYY" maxlength="4">				  				 
+                  </li>
+                  <li><label class="grid" >Medical Conditions</label></li>
+                  <textarea rows="4" cols="50"  name="medical" id="medical"> </textarea>
+                  <li><label class="grid" >Experience Level<span>*</span></label>                       
+                     <input type="radio" name="experience" id="experience1" value="Expert" /> Expert
+                     <input type="radio" name="experience" id="experience2" value="Experienced" />  Experienced                                 
+                     <input type="radio" name="experience" id="experience3" value="Novice" />  Novice                                 
+                  </li>
+                  <li><label class="grid" >Category<span>*</span></label>                       
+                     <input type="radio" name="category"  id="category1" value="Teen" /> Teen
+                     <input type="radio" name="category"  id="category2" value="Adult" /> Adult                                 
+                     <input type="radio" name="category"  id="category3" value="Senior" />  Senior                                 
+                  </li>
+               </ul>
+            </fieldset>
+            <fieldset>
+               <legend>Runner Photo Upload</legend>
+               <table>
+                  <tr>
+                     <td>Runner Image:</td>
+                     <td><input type="file" id="picture" name="file" /> 
+				<!--	 <input type="button" value="Upload File" id="submit_button" /> -->
+                  </tr>
+				  
+               </table>
+				<h2 id="status"></h2>
+				<div id="pic"></div>
+				<h2 id="answer"></h2>
+               <div id="button_panel">  
+                  <input type="reset" value="Clear" class="button" id="reset_button"/>
+                  <input type="submit" value="submit" class="button" id="send_data" />		   
+               </div>
+               <div id="error_message"></div>
+               <div id="home1"><a href="index.html" id="home" >Go To Home</a></div>
+            </fieldset>
+         </form>
+      </div>
+   </body>
+</html>
